@@ -1,5 +1,5 @@
 from pages.BasePage import BasePage
-from locators.gnb_locators import GNBLocators
+from locators.gp.gnb_locators import GNBLocators
 
 class GNB(BasePage):
 

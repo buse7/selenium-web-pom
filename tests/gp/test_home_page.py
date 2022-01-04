@@ -1,7 +1,7 @@
 import pytest
 import time
-from pages.HomePage import HomePage
-from pages.GNB import GNB
+from pages.gp.HomePage import HomePage
+from pages.gp.GNB import GNB
 from tests.test_base import BaseTest
 
 class TestHome(BaseTest):
