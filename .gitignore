@@ -1,0 +1,7 @@
+__pycache__/
+alllure-results*/
+*.pyc
+.vscode/
+*.md
+chrometemp/
+config.json
