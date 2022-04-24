@@ -1,7 +1,7 @@
-from locators.gnb_locators import GNBLocators
+from locators.gp.gnb_locators import GNBLocators
 from pages.BasePage import BasePage
-from locators.home_locators import HomePageLocators
-from locators.maintenance_locators import MaintenanceLocators
+from locators.gp.home_locators import HomePageLocators
+from locators.gp.maintenance_locators import MaintenanceLocators
 from selenium.webdriver.common.by import By
 
 

@@ -1,5 +1,7 @@
 __pycache__/
-alllure-results*/
+allure-results/*
+allure-reports/*
+screenshots/*
 *.pyc
 .vscode/
 *.md

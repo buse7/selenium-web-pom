@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="3" hostname="Jimmyui-MacBookPro.local" name="pytest" skipped="0" tests="5" time="18.510" timestamp="2022-04-24T15:19:49.397246"><testcase classname="tests.gp.test_home_page.TestHome" name="test_page_load" time="5.923" /><testcase classname="tests.gp.test_home_page.TestHome" name="test_something" time="2.971"><failure message="AssertionError: assert 'asdasd' in 'WEBZEN | Free to Play MMORPG Portal'&#10; +  where 'WEBZEN | Free to Play MMORPG Portal' = &lt;bound method BasePage.get_title of &lt;pages.gp.HomePage.HomePage object at 0x10570d5f8&gt;&gt;()&#10; +    where &lt;bound method BasePage.get_title of &lt;pages.gp.HomePage.HomePage object at 0x10570d5f8&gt;&gt; = &lt;pages.gp.HomePage.HomePage object at 0x10570d5f8&gt;.get_title">self = &lt;test_home_page.TestHome object at 0x105117208&gt;
+
+    @allure.step
+    #@pytest.mark.skip('skip test')
+    def test_something(self):
+      home_page = HomePage(self.driver)
+&gt;     assert 'asdasd' in home_page.get_title()
+E     AssertionError: assert 'asdasd' in 'WEBZEN | Free to Play MMORPG Portal'
+E      +  where 'WEBZEN | Free to Play MMORPG Portal' = &lt;bound method BasePage.get_title of &lt;pages.gp.HomePage.HomePage object at 0x10570d5f8&gt;&gt;()
+E      +    where &lt;bound method BasePage.get_title of &lt;pages.gp.HomePage.HomePage object at 0x10570d5f8&gt;&gt; = &lt;pages.gp.HomePage.HomePage object at 0x10570d5f8&gt;.get_title
+
+tests/gp/test_home_page.py:20: AssertionError</failure></testcase><testcase classname="tests.gp.test_home_page.TestHome" name="test_bi_click" time="5.537" /><testcase classname="tests.gp.test_login_page.TestLogin" name="test_page_load" time="3.070"><failure message="AttributeError: 'LoginPage' object has no attribute 'open_home_page'">self = &lt;test_login_page.TestLogin object at 0x1050bd0f0&gt;
+
+    @allure.step
+    def test_page_load(self):
+      home_page = LoginPage(self.driver)
+&gt;     home_page.open_home_page()
+E     AttributeError: 'LoginPage' object has no attribute 'open_home_page'
+
+tests/gp/test_login_page.py:13: AttributeError</failure></testcase><testcase classname="tests.gp.test_login_page.TestLogin" name="test_something" time="0.844"><failure message="AssertionError: assert 'asdasd' in ''&#10; +  where '' = &lt;bound method BasePage.get_title of &lt;pages.gp.LoginPage.LoginPage object at 0x1057aa320&gt;&gt;()&#10; +    where &lt;bound method BasePage.get_title of &lt;pages.gp.LoginPage.LoginPage object at 0x1057aa320&gt;&gt; = &lt;pages.gp.LoginPage.LoginPage object at 0x1057aa320&gt;.get_title">self = &lt;test_login_page.TestLogin object at 0x1050bdda0&gt;
+
+    @allure.step
+    #@pytest.mark.skip('skip test')
+    def test_something(self):
+      home_page = LoginPage(self.driver)
+&gt;     assert 'asdasd' in home_page.get_title()
+E     AssertionError: assert 'asdasd' in ''
+E      +  where '' = &lt;bound method BasePage.get_title of &lt;pages.gp.LoginPage.LoginPage object at 0x1057aa320&gt;&gt;()
+E      +    where &lt;bound method BasePage.get_title of &lt;pages.gp.LoginPage.LoginPage object at 0x1057aa320&gt;&gt; = &lt;pages.gp.LoginPage.LoginPage object at 0x1057aa320&gt;.get_title
+
+tests/gp/test_login_page.py:20: AssertionError</failure></testcase></testsuite></testsuites>
