@@ -7,3 +7,4 @@ screenshots/*
 *.md
 chrometemp/
 config.json
+junit_report.xml
