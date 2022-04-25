@@ -1,0 +1,24 @@
+{ 
+  "PATH" : {
+    "Chrome" : ""
+  },
+
+  "ACCOUNT" : {
+    "Default" : {
+      "id" : "",
+      "pwd" : "" 
+    },
+    "Google" : {
+      "id" : "",
+      "pwd" : ""
+    },
+    "Facebook" : {
+      "id" : "",
+      "pwd" : ""
+    },
+    "Webzen" : {
+      "id" : "",
+      "pwd" : ""
+    }
+  }
+}

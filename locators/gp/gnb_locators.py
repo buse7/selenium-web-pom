@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 class GNBLocators:
   GNB = (By.XPATH, "//header[@class='global-header-container']")
-  BI = (By.XPATH, "//h1/a[@class='nav-caller']")
+  CI = (By.XPATH, "//h1/a[@class='nav-caller']")
   GAMES = (By.XPATH, "//menu//li[@class='games']")
   GAMES_LAYER = (By.XPATH, "//menu//li[@class='games']//div[@class='games-layer']")
   GAMES_LAYER_TITLE = (By.XPATH, f"{GAMES_LAYER[1]}//strong")

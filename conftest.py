@@ -1,10 +1,16 @@
 import pytest
 import allure
 import re
+import json
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
+
+# get config 
+with open('config.json', 'r') as cf:
+  config = json.load(cf)
+account = config['ACCOUNT']
 
 # get console parameter
 def pytest_addoption(parser):
@@ -18,10 +24,11 @@ def pytest_generate_tests(metafunc):
 		metafunc.parametrize(
 			"browser", metafunc.config.option.browsers.split(','), scope='session')
 
-
 @pytest.fixture(scope='class')
 def selenium_driver(request):
-  driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+  chrome_options = webdriver.ChromeOptions()
+  #chrome_options.add_argument('--headless')
+  driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
   driver.implicitly_wait(5)
   request.cls.driver = driver
 
@@ -29,6 +36,17 @@ def selenium_driver(request):
 
   yield driver
   driver.quit()
+
+# id args
+@pytest.fixture(scope='session')
+def id(request):
+	return request.config.getoption("--id") if request.config.getoption("--id") else config["ACCOUNT"]["Default"]["id"]
+
+# password args
+@pytest.fixture(scope='session')
+def password(request):
+	return request.config.getoption("--password") if request.config.getoption("--password") else config["ACCOUNT"]["Default"]["pwd"]
+
 
 # set up a hook to be able to check if a test has failed
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)

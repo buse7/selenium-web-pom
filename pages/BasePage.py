@@ -25,6 +25,9 @@ class BasePage():
   def open_url(self, path):
     self.driver.get(path)
 
+  def get_cookie(self, key):
+    return self.driver.get_cookie(key)
+
   def find_element(self, locator):
     return self.driver.find_element(locator[0], locator[1])
 
