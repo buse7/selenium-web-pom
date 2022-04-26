@@ -77,3 +77,15 @@ class BasePage():
 
   def is_selected(self, locator):
     return self.find_element(locator).is_selected()
+
+  def wait_new_window_open(self, timeout=0):    
+    handles_before = self.driver.window_handels
+    yield
+    WebDriverWait(self.driver, timeout).until(lambda driver: len(handles_before) != len(self.driver.window_handles))
+  
+  def switch_window(self, number):
+    handles = self.driver.window_handles
+    if len(handles) < number:
+      return False
+    else:
+      self.driver.switch_to.window(handles[number])

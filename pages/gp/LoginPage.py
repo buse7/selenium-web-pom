@@ -80,4 +80,6 @@ class LoginPage(BasePage):
   def login(self, id, password):
     self.set_id(id)
     self.set_password(password)
-    self.find_element(LoginLocators.LOGIN_BTN).click()
+    
+    self.click(LoginLocators.LOGIN_BTN)
+    return self

@@ -11,4 +11,7 @@ class GNBLocators:
   TOPUP = (By.XPATH, "//menu//li[@class='wcoin']")
   SUPPORT = (By.XPATH, "//menu//li[@class='support']")
   LOGIN = (By.XPATH, "//menu//li[@class='sign']")
+  MY_ACCOUNT = (By.XPATH, "//a[@class='nickname']")
+  MY_ACCOUNT_MENU = (By.XPATH, "//ul[@class='my-contents list']")
+  LOGOUT = (By.XPATH, f"{MY_ACCOUNT_MENU[1]}//li//a[contains(text(), 'Log Out')]")
   REGISTER = (By.XPATH, "//menu//li[@class='sign-up']")
