@@ -123,8 +123,7 @@ class GNB(BasePage):
   def get_nav_register_link(self):
     if self.is_displayed(GNBLocators.REGISTER, 10):
       return self.get_href(GNBLocators.REGISTER)
-
-  
+              
   # logout
   def logout(self):
     self.click(GNBLocators.MY_ACCOUNT)
