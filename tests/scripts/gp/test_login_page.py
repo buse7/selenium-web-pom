@@ -10,7 +10,7 @@ from locators.gp.recover_locators import RecoverLocators
 @allure.feature("Test Login Page")
 class TestLogin(BaseTest):
 
-  @allure.story('Test Page Open')
+  @allure.story('Test Login Page Open')
   def test_login_page_load(self):
     login_page = LoginPage(self.driver)
     login_page.open_login_page()

@@ -8,5 +8,5 @@ class HomePageLocators:
   LINEUP_TAB = (By.XPATH, f"{LINEUP[1]}//nav[@class='tab']")
   LINEUP_LIST = (By.XPATH, f"{LINEUP[1]}//ul")
   LINEUP_ITEM = (By. XPATH, f"{LINEUP_LIST[1]}//li")
-  MAIN_BANNER = (By. XPATH, "//artical[@class='main-roll-banner']")
+  MAIN_BANNER = (By. XPATH, "//article[@class='main-roll-banner']")
   
