@@ -25,6 +25,9 @@ class BasePage():
   def open_url(self, path):
     self.driver.get(path)
 
+  def get_cookie(self, key):
+    return self.driver.get_cookie(key)
+
   def find_element(self, locator):
     return self.driver.find_element(locator[0], locator[1])
 
@@ -74,3 +77,15 @@ class BasePage():
 
   def is_selected(self, locator):
     return self.find_element(locator).is_selected()
+
+  def wait_new_window_open(self, timeout=0):    
+    handles_before = self.driver.window_handels
+    yield
+    WebDriverWait(self.driver, timeout).until(lambda driver: len(handles_before) != len(self.driver.window_handles))
+  
+  def switch_window(self, number):
+    handles = self.driver.window_handles
+    if len(handles) < number:
+      return False
+    else:
+      self.driver.switch_to.window(handles[number])

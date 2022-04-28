@@ -1,5 +1,5 @@
 import pytest
 
-@pytest.mark.usefixtures('init_driver')
+@pytest.mark.usefixtures('selenium_driver')
 class BaseTest:
   pass

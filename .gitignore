@@ -1,7 +1,10 @@
 __pycache__/
-alllure-results*/
+allure-results/*
+allure-reports/*
+screenshots/*
 *.pyc
 .vscode/
 *.md
 chrometemp/
 config.json
+junit_report.xml

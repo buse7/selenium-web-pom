@@ -15,19 +15,19 @@ class GNB(BasePage):
     if self.is_displayed(GNBLocators.GNB, 10):
       return self.find_element(GNBLocators.GNB) 
 
-  # bi 
+  # ci
 
-  def get_bi(self):
-    if self.is_displayed(GNBLocators.BI, 10):
-      return self.find_element(GNBLocators.BI)
+  def get_ci(self):
+    if self.is_displayed(GNBLocators.CI, 10):
+      return self.find_element(GNBLocators.CI)
 
-  def get_bi_screenshot(self):
-    if self.is_displayed(GNBLocators.BI, 10):
-      self.get_element_screenshot(GNBLocators.BI)
+  def click_ci(self):
+    if self.is_displayed(GNBLocators.CI, 10):
+      self.click(GNBLocators.CI)
 
-  def click_bi(self):
-    if self.is_displayed(GNBLocators.BI, 10):
-      self.click(GNBLocators.BI)
+  def get_ci_link(self):
+    if self.is_displayed(GNBLocators.CI, 10):
+      return self.get_href(GNBLocators.CI)
 
   # navigator
   # nav - games
@@ -39,14 +39,6 @@ class GNB(BasePage):
   def click_nav_games(self):
     if self.is_displayed(GNBLocators.GAMES, 10):
       self.click(GNBLocators.GAMES)
-  
-  def get_nav_games_screenshot(self):
-    if self.is_displayed(GNBLocators.GAMES, 10):
-      self.get_element_screenshot(GNBLocators.GAMES)
-  
-  def get_nav_games_text(self):
-    if self.is_displayed(GNBLocators.GAMES, 10):
-      return self.get_text(GNBLocators.GAMES)
 
   # nav - games-layer
   
@@ -85,14 +77,10 @@ class GNB(BasePage):
   def click_nav_topup(self):
     if self.is_displayed(GNBLocators.TOPUP, 10):
       self.click(GNBLocators.TOPUP)
-  
-  def get_nav_topup_screenshot(self):
-    if self.is_displayed(GNBLocators.TOPUP, 10):
-      self.get_element_screenshot(GNBLocators.TOPUP)
-  
-  def get_nav_topup_text(self):
-    if self.is_displayed(GNBLocators.TOPUP, 10):
-      return self.get_text(GNBLocators.TOPUP)
+
+  def get_nav_topup_link(self):
+    if self.is_displayed(GNBLocators.SUPPORT, 10):
+      return self.get_href(GNBLocators.SUPPORT)
 
   # nav - support
 
@@ -103,14 +91,10 @@ class GNB(BasePage):
   def click_nav_support(self):
     if self.is_displayed(GNBLocators.SUPPORT, 10):
       self.click(GNBLocators.SUPPORT)
-  
-  def get_nav_support_screenshot(self):
+
+  def get_nav_support_link(self):
     if self.is_displayed(GNBLocators.SUPPORT, 10):
-      self.get_element_screenshot(GNBLocators.SUPPORT)
-  
-  def get_nav_support_text(self):
-    if self.is_displayed(GNBLocators.SUPPORT, 10):
-      return self.get_text(GNBLocators.SUPPORT)
+      return self.get_href(GNBLocators.SUPPORT)
 
   # nav - login
 
@@ -121,14 +105,10 @@ class GNB(BasePage):
   def click_nav_login(self):
     if self.is_displayed(GNBLocators.LOGIN, 10):
       self.click(GNBLocators.LOGIN)
-  
-  def get_nav_login_screenshot(self):
+
+  def get_nav_login_link(self):
     if self.is_displayed(GNBLocators.LOGIN, 10):
-      self.get_element_screenshot(GNBLocators.LOGIN)
-  
-  def get_nav_login_text(self):
-    if self.is_displayed(GNBLocators.LOGIN, 10):
-      return self.get_text(GNBLocators.LOGIN)
+      return self.get_href(GNBLocators.LOGIN)
 
   # nav - register
 
@@ -140,10 +120,12 @@ class GNB(BasePage):
     if self.is_displayed(GNBLocators.REGISTER, 10):
       self.click(GNBLocators.REGISTER)
   
-  def get_nav_register_screenshot(self):
+  def get_nav_register_link(self):
     if self.is_displayed(GNBLocators.REGISTER, 10):
-      self.get_element_screenshot(GNBLocators.REGISTER)
-  
-  def get_nav_register_text(self):
-    if self.is_displayed(GNBLocators.REGISTER, 10):
-      return self.get_text(GNBLocators.REGISTER)
+      return self.get_href(GNBLocators.REGISTER)
+              
+  # logout
+  def logout(self):
+    self.click(GNBLocators.MY_ACCOUNT)
+    if self.is_displayed(GNBLocators.MY_ACCOUNT_MENU):
+      self.click(GNBLocators.LOGOUT)
